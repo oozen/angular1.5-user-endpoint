@@ -1,4 +1,4 @@
-# angular1.5-user-endpoint
+# Angular1.5 User Endpoint with JSON-Server
 
 This project creates a user endpoint using Angularjs 1.5.x and Angular-ui consuming the JSON-server user data.
 
