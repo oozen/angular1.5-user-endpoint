@@ -1,0 +1,26 @@
+{
+  "name": "angular1.5-user-endpoint",
+  "version": "1.0.0",
+  "description": "This project creates a user endpoint using Angularjs 1.5.x and Angular-ui consuming the JSON-server user data.",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.5.10"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oozen/angular1.5-user-endpoint.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oozen/angular1.5-user-endpoint/issues"
+  },
+  "homepage": "https://github.com/oozen/angular1.5-user-endpoint#readme"
+}
