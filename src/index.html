@@ -10,7 +10,7 @@
         <header>
             <div class="container"><h1>APP</h1></div>
         </header>
-        <main>
+        <main id="userCtrl" ng-controller="userCtrl">
             <div id="headline">
                 <div class="container">
                     <h2>USER LIST</h2>
@@ -25,20 +25,31 @@
                         <thead>
                             <tr>
                                 <td>ID</td>
-                                <td>Email</td>
-                                <td>Username</td>
                                 <td>First Name</td>
                                 <td>Last Name</td>
-                                <td>User type</td>
-                                <td>Company</td>
-                                <td>Actions</td>
+                                <td>Email</td>
+                                <td>Gender</td>
+                                <td>Password</td>
+                                <td>ACTIONS</td>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            <tr ng-repeat="u in userList">
+                                <td>{{u.id}}</td>
+                                <td>{{u.first_name}}</td>
+                                <td>{{u.last_name}}</td>
+                                <td>{{u.email}}</td>
+                                <td>{{u.gender}}</td>
+                                <td>{{u.password}}</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
         </main>
     </div>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
