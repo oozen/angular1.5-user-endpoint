@@ -8,7 +8,7 @@
 <body>
     <div class="app" ng-app="app">
         <header>
-            <div class="container"><h1>APP</h1></div>
+            <div class="container"><h1>Angular1.5-user-endpoint</h1></div>
         </header>
         <main id="userCtrl" ng-controller="userCtrl">
             <div id="headline">
@@ -18,18 +18,23 @@
             </div>
             <div class="container">
                 <section id="actionButtons">
-                    <button>ADD USER</button>
+                    <button ng-click="togglePop(true)">ADD USER</button>
+                    <div class="search">
+                        <input type="text" ng-model="searchText" placeholder="search anything" />
+                        <button ng-click="search()">search</button>
+                    </div>
+                    <div class="clear"></div>
                 </section>
                 <div id="userList">
                     <table cellpadding="0" cellspacing="0">
                         <thead>
                             <tr>
-                                <td>ID</td>
-                                <td>First Name</td>
-                                <td>Last Name</td>
-                                <td>Email</td>
-                                <td>Gender</td>
-                                <td>Password</td>
+                                <td><a id="id" class="sort" ng-click="sort('id')" >ID</a></td>
+                                <td><a id="first_name" class="sort" ng-click="sort('first_name')">First Name</a></td>
+                                <td><a id="last_name" class="sort" ng-click="sort('last_name')">Last Name</a></td>
+                                <td><a id="email" class="sort" ng-click="sort('email')">Email</a></td>
+                                <td><a id="gender" class="sort" ng-click="sort('gender')">Gender</a></td>
+                                <td><a id="password" class="sort" ng-click="sort('password')">Password</a></td>
                                 <td>ACTIONS</td>
                             </tr>
                         </thead>
@@ -41,12 +46,30 @@
                                 <td>{{u.email}}</td>
                                 <td>{{u.gender}}</td>
                                 <td>{{u.password}}</td>
-                                <td></td>
+                                <td><button class="delete" ng-click="deleteUser(u.id)">Delete</button></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                <br />
+                <span class="page-number" ng-repeat="n in pageNumbers">
+                    <a href="javascript:void(0)" class="{{n.isCurrent == true ?'active':''}}" ng-click="pagination(n.number)">{{n.number}}</a>
+                </span>
             </div>
+            <section id="addUserPop">
+                <a class="close" href="javascript:void(0)" ng-click="togglePop(false)">close(x)</a>
+
+                <input type="text" placeholder="First Name" ng-model="userModel.first_name"><br />
+                <input type="text" placeholder="Last Name" ng-model="userModel.last_name"><br />
+                <input type="email" placeholder="Email" ng-model="userModel.email"><br />
+
+                <select ng-model="userModel.gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select><br />
+                <input id="password" type="password" placeholder="******" ng-model="userModel.password"><br /><br />
+                <button ng-click="addUser()">ADD USER</button>
+            </section>
         </main>
     </div>
     <script src="js/vendor/angular.min.js"></script>

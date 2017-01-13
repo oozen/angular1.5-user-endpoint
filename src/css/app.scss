@@ -1,6 +1,7 @@
-﻿$colorHead:#638284;
-$colorTitle:#3c6161;
-$bgColor1:#c0d7de;
+﻿$colorHead: #638284;
+$colorTitle: #3c6161;
+$bgColor1: #c0d7de;
+$colorDanger:#d93232;
 
 html, body {
     margin: 0;
@@ -36,8 +37,9 @@ body {
     main {
 
         #headline {
-            background-color:$bgColor1;
-            padding:5px 0;
+            background-color: $bgColor1;
+            padding: 5px 0;
+
             h2 {
                 font-size: 19px;
                 margin: 0;
@@ -46,30 +48,39 @@ body {
         }
 
         #actionButtons {
-            margin:30px 0;
-            button {
-                color:white;
-                background-color: #ed772f;
-                padding: 10px 15px;
-                border-radius: 2px;
-                margin-right: 15px;
-                border:none;
-                cursor:pointer;
+            margin: 30px 0;
+
+            .search{
+                float:right;
+                text-align:right;
+                button{
+                    padding:3px 5px !important;
+                }
             }
         }
 
         #userList {
             table {
-                width:100%;
+                width: 100%;
+
                 thead {
                     tr {
                         background-color: $bgColor1;
-                        td{
-                            padding:10px 5px;
-                            font-weight:bold;
-                            border:none;
-                            color:$colorTitle;
-                            font-size:13px;
+
+                        td {
+                            padding: 10px 5px;
+                            font-weight: bold;
+                            border: none;
+                            color: $colorTitle;
+                            font-size: 13px;
+                            a{
+                                display:inline-block;
+                                width:100%;
+                                cursor:pointer;
+                                padding-left:20px;
+                                background:url(sort.png) left center no-repeat;
+                            }
+
                         }
                     }
                 }
@@ -82,8 +93,67 @@ body {
                     tr:nth-child(odd) {
                         background: #dde9ec;
                     }
+
+                    tr td {
+                        padding: 10px 5px;
+                    }
                 }
             }
         }
+
+        #addUserPop {
+            display: none;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            padding: 20px;
+            width: 240px;
+            border: 2px solid #638284;
+            border-radius: 5px;
+            margin-left: -100px;
+            background-color: rgba(255,255,255,1);
+            line-height: 32px;
+            .close{
+                position:absolute;
+                right:5px;
+                top:-5px;
+                color:$colorDanger;
+            }
+        }
+
+        button, a.button {
+            color: white;
+            background-color: #ed772f;
+            padding: 8px 15px;
+            border-radius: 2px;
+            margin-right: 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button.delete {
+            background-color:$colorDanger !important;
+            padding: 4px 7px;
+            font-size: 11px;
+        }
+
+        .page-number{
+            margin-right:5px;
+            padding:5px;
+            background-color:#fff;
+            a{
+                color:$colorTitle;
+                text-decoration:none;
+            }
+            a.active{
+                color:#ed772f;
+            }
+        }
+
+        .clear{
+            clear:both;
+        }
+       
     }
+     
 }

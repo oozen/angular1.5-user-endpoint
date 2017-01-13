@@ -1,4 +1,5 @@
-﻿var gulp = require('gulp');
+/// <binding />
+var gulp = require('gulp');
 var concat = require('gulp-concat');
 
 gulp.task('angular', function () {

@@ -32,14 +32,11 @@ body {
 
 .app main #actionButtons {
   margin: 30px 0; }
-  .app main #actionButtons button {
-    color: white;
-    background-color: #ed772f;
-    padding: 10px 15px;
-    border-radius: 2px;
-    margin-right: 15px;
-    border: none;
-    cursor: pointer; }
+  .app main #actionButtons .search {
+    float: right;
+    text-align: right; }
+    .app main #actionButtons .search button {
+      padding: 3px 5px !important; }
 
 .app main #userList table {
   width: 100%; }
@@ -51,8 +48,61 @@ body {
       border: none;
       color: #3c6161;
       font-size: 13px; }
+      .app main #userList table thead tr td a {
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding-left: 20px;
+        background: url(sort.png) left center no-repeat; }
   .app main #userList table tbody tr:nth-child(even) {
     background: #eaf2f4; }
   .app main #userList table tbody tr:nth-child(odd) {
     background: #dde9ec; }
+  .app main #userList table tbody tr td {
+    padding: 10px 5px; }
+
+.app main #addUserPop {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  padding: 20px;
+  width: 240px;
+  border: 2px solid #638284;
+  border-radius: 5px;
+  margin-left: -100px;
+  background-color: white;
+  line-height: 32px; }
+  .app main #addUserPop .close {
+    position: absolute;
+    right: 5px;
+    top: -5px;
+    color: #d93232; }
+
+.app main button, .app main a.button {
+  color: white;
+  background-color: #ed772f;
+  padding: 8px 15px;
+  border-radius: 2px;
+  margin-right: 15px;
+  border: none;
+  cursor: pointer; }
+
+.app main button.delete {
+  background-color: #d93232 !important;
+  padding: 4px 7px;
+  font-size: 11px; }
+
+.app main .page-number {
+  margin-right: 5px;
+  padding: 5px;
+  background-color: #fff; }
+  .app main .page-number a {
+    color: #3c6161;
+    text-decoration: none; }
+  .app main .page-number a.active {
+    color: #ed772f; }
+
+.app main .clear {
+  clear: both; }
 
