@@ -41,7 +41,7 @@ function userService($http, $q, $filter, $rootScope) {
         var deferred = $q.defer();
 
         $http({
-            method: 'POST',
+            method: 'GET',
             url: 'http://localhost:3000/db',
             headers: { 'Content-Type': 'application/json' },
         }).success(function (data, status, headers, config) {
